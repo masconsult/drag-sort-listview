@@ -4,6 +4,11 @@ DragSortListView
 News
 ----
 
+**Jan. 10, 2013**: Version 0.5.0 is released. Supports ListView
+multi-choice and single-choice modes thanks to the hard work of
+[Mattias Flodin](https://github.com/mattiasflodin)! Awesome-sauce.
+Check out the new demos.
+
 **Nov. 23, 2012**: Hmmm, what's this? &rarr; [Gittip](https://www.gittip.com/bauerca) :)
 
 **Nov. 17, 2012**: [Drag-Sort Demos](https://play.google.com/store/apps/details?id=com.mobeta.android.demodslv)
@@ -201,6 +206,12 @@ within in a custom ListAdapter or CursorWrapper that implements the
 DropListener interface. See Issue #20 for a discussion of this.
 **Update**: Or simply use the DragSortCursorAdapter class!
 
+If your DSLV instance `android:choiceMode` is not `"none"`, and your
+ListAdapter does not have stable ids, you must call
+[DragSortListView.moveCheckState(int from, int to)](http://bauerca.github.com/drag-sort-listview/reference/com/mobeta/android/dslv/DragSortListView.html#moveCheckState(int, int\))
+within `drop(from, to)`. See the documentation in the DSLV API for more
+info.
+
 #### DragSortListView.RemoveListener
 
 As the TI did, DSLV provides gestures for removing the floating
@@ -216,6 +227,12 @@ Whether you actually remove the data or not is up to you.
 
 Item removal can now happen outside of a drag event. The method
 `DragSortListView.removeItem(int position)` can be called at any time.
+
+If your DSLV instance `android:choiceMode` is not `"none"`, and your
+ListAdapter does not have stable ids, you must call
+[DragSortListView.removeCheckState(int position)](http://bauerca.github.com/drag-sort-listview/reference/com/mobeta/android/dslv/DragSortListView.html#removeCheckState(int\))
+within `remove(which)`. See the documentation in the DSLV API for more
+info.
 
 #### DragSortListView.DragListener
 

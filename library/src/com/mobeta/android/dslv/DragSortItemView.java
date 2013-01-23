@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.Checkable;
+import android.util.Log;
 
 /**
  * Lightweight ViewGroup that wraps list items obtained from user's ListAdapter.
@@ -30,7 +31,7 @@ public class DragSortItemView extends ViewGroup implements Checkable {
                 ViewGroup.LayoutParams.FILL_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
 
-        setClipChildren(true);
+        //setClipChildren(true);
     }
 
     public void setGravity(int gravity) {
@@ -115,5 +116,4 @@ public class DragSortItemView extends ViewGroup implements Checkable {
         if (child instanceof Checkable)
             ((Checkable) child).toggle();
     }
-
 }
